@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Page</title>
+    <!-- favicon  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./vendors/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./vendors/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./vendors/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./vendors/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./vendors/favicon/android-chrome-512x512.png">
+
+    <link rel="manifest" href="./vendors/favicon/site.webmanifest">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./vendors/bootstrap-5.3.7-dist/css/bootstrap.css">
+
+    <!-- bootstrap js  -->
+    <script src="./vendors/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./vendors/fontawesome-free-7.0.0-web/css/all.css">
+    <style>
+        /* root  */
+        :root {
+            --border-color1: #8d02ff;
+            --border-color2: #f86767;
+            --font-color1: rgb(255, 0, 242);
+            --font-color2: black;
+            --btn-color-red: rgba(253, 16, 16, 0.548);
+            --bg-color1: rgba(0, 0, 0, 0.808);
+            --font-size1: 20px;
+            --font-size2: 35px;
+            --font-size3: 25px;
+            --white-shade: rgba(255, 255, 255, 0.5);
+        }
+
+        /* google fonts [downloaded]  */
+        @font-face {
+            font-family: font1;
+            src: url('./vendors/Intel_One_Mono/static/IntelOneMono-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: font2;
+            src: url('./vendors/Space_Mono/SpaceMono-Regular.ttf');
+        }
+
+        /* universal */
+        * {
+            font-family: 'font2';
+            color: var(--font-color2);
+            margin: 0;
+            padding: 0;
+            font-size: var(--font-size1);
+            /* box-sizing: content-box; */
+        }
+
+        body {
+            background-color: var(--bg-color1);
+
+        }
+
+        li:hover {
+            font-weight: 600;
+        }
+
+
+        nav .active {
+            font-weight: 600;
+        }
+
+
+        li {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            font-family: 'font2';
+        }
+
+
+        /* for desktop */
+        @media only screen and (min-width: 768px) {
+            .nav-link {
+                color: white !important;
+            }
+
+            .part1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .p1p1 {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 3;
+                justify-content: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            form {
+                width: 50%;
+            }
+
+            .p1p2 img {
+                height: 85vh;
+                /* object-fit: cover; */
+                /* height: 100%; */
+                width: auto;
+                flex-grow: 1;
+                flex-shrink: 0;
+            }
+
+            .p1p2 img {
+                outline: 2px solid var(--border-color2);
+            }
+
+            .mail {
+                display: flex;
+                justify-content: center;
+                align-self: center;
+            }
+
+            .social-circle {
+                height: 400px;
+                width: 400px;
+            }
+
+            .logoking {
+                position: relative;
+            }
+
+            .logoking::after {
+                content: '';
+                height: 300px;
+                width: 3px;
+                background-color: rgb(248, 103, 103);
+                position: absolute;
+                top: 30%;
+                /* left: 40px; */
+                /* left: 6vh; */
+                left: 50%;
+                z-index: -1;
+            }
+
+            .coru {
+                height: 70vh;
+                width: 80vw;
+                object-fit: contain;
+                background-color: #f86767;
+                border: 2px solid #8d02ff;
+                border-radius: 25px;
+
+            }
+        }
+
+
+
+        /* for mobile */
+        @media only screen and (min-width: 0px) and (max-width: 767px) {
+            .social-circle {
+                height: 250px;
+                width: 250px;
+            }
+
+            .coru {
+                height: 50vh;
+                width: 80vw;
+                object-fit: contain;
+                background-color: #f86767;
+                border: 2px solid #8d02ff;
+                border-radius: 25px;
+
+
+            }
+
+            .logo-king-child {
+                display: none;
+            }
+
+            .part1 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .p1p1 {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .mail {
+                display: flex;
+                justify-content: center;
+
+                align-self: center;
+            }
+
+            ul {
+                padding-top: 20px;
+            }
+
+            .p1p2 img {
+
+                padding: 30px;
+            }
+
+            .p1p2 img {
+                outline: 2px solid var(--border-color2);
+                outline-offset: -30px;
+            }
+
+            .tbd {
+                background: url('./sources/illu.webp');
+                filter: invert(100%);
+            }
+        }
+
+        .section {
+            border-bottom: 4px solid var(--border-color2);
+            color: white;
+            font-size: var(--font-size3);
+
+        }
+
+        .section span {
+            color: var(--border-color1);
+            font-size: var(--font-size3);
+
+        }
+
+        .social-circle {
+            border: 3px solid var(--border-color2);
+        }
+
+        .aboutext {
+            color: white;
+        }
+
+
+
+
+        @keyframes rotate1 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* @keyframes rotate2{
+            form{
+                transform: rotate(0deg);
+            }
+            to{
+                transform :rotate(-360deg);
+
+            }
+
+        } */
+
+        .rounded-circle:hover {
+            animation: rotate1 20s linear infinite;
+        }
+
+        .tbd {
+            background: url('./sources/illu.webp');
+            /* filter: invert(100%); */
+        }
+
+        /* .logos {
+            animation: rotate2 20s linear infinite;
+        } */
+        .tbd2 {
+            background: url('./sources/vecteezy_geometric.png');
+            /* filter: invert(100%); */
+
+        }
+
+        .da:hover {
+            transform: scale(2) rotateX(180deg);
+            transition: all 0.5s ease;
+        }
+
+        .card-text {
+            font-size: var(--font-size1);
+        }
+
+        body {
+            font-family: 'font2';
+        }
+
+        .f2 {
+            font-family: 'font1';
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- welcome div -->
+
+
+    <!-- navigation -->
+    <div class="container-fluid  position-sticky top-0 " style=" z-index: 100; background-color: var(--bg-color1); ">
+        <nav class="navbar navbar-expand-md">
+            <div class="navbar-brand px-0 py-0 ">
+                <i class="fa-brands  fa-web-awesome text-light h1 logoking">
+                </i>
+                <a href="https://github.com/riteshitankar">
+                    <img src="./sources/github (1).png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 100px;">
+                </a>
+                <a href="https://www.linkedin.com/in/ritesh-itankar/">
+                    <img src="./sources/linkedin.png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 200px;">
+                </a>
+                <a href="https://wa.me/+918767960965?text=Hello Ritesh,">
+                    <img src="./sources/whatsapp.png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 300px;">
+                </a>
+                <a href="./index.html"
+                    style="color: white;background-color: var(--white-shade); text-decoration: none; font-family: font1; color:var(--border-color1);"
+                    class="h4"> RITESH </a>
+
+            </div>
+
+            <button class="btn bg-light border navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu">
+                <span class="navbar-toggler-icon"></span>
+                <span style="font-family: 'font1';">Menu</span>
+            </button>
+            <div class="offcanvas offcanvas-end " id="mobilemenu">
+                <ul class="navbar-nav gap-3 text-center ms-md-auto">
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="/index.html" target="_blank" class="nav-link">Home
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-content-center align-item-center">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./education.html" target="_blank" class="nav-link active">Education</a>
+                    </li>
+                    <li class="nav-item d-flex align-content-center align-item-center">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./certificates.html" target="_blank" class="nav-link ">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./projects.html" target="_blank" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./contact.html" target="_blank" class="nav-link">Contact Me</a>
+                    </li>
+                    <!-- <button class="alert btn d-xs-block d-md-none alert-danger d-flex gap-2 align-self-center"
+                            data-bs-dismiss="offcanvas" data-bs-target="#mobilemenu">
+                            <span class="btn-close"></span>
+                            <span style="font-family: 'font1';">CLOSE</span>
+                        </button> -->
+                    <button data-bs-dismiss="offcanvas" data-bs-target="mobilemenu"
+                        class="btn btn-danger d-md-none d-flex align-self-center justify-content-center gap-2 text-light"
+                        style="font-family: 'font1'; ">
+                        <span class="btn btn-close"> </span>
+                        <!-- <span class="fa-solid fa-xmark text-white"></span> -->
+                        CLOSE
+
+                    </button>
+
+
+
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <!-- part 1  -->
+    <div class="container-fluid bg-dark tbd">
+        <div class="container px-5 d-flex text-center flex-column align-items-center justify-content-center "
+            style="height: 90vh; width: 100px;">
+            <div class="py-5 h1 text-dark bg-light px-md-5 px-3 mb-5 rounded-5 d-flex align-items-center flex-row ">
+                <span style="font-size: 50px;  color: #8d02ff;">#</span>
+                <span style="font-size: var(--font-size2);">Education</span>
+            </div>
+            <div>
+                <a href="#below"><img src="./sources/arrow-down-sign-to-navigate.png" class="da" alt=""
+                        height="50px"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- blank section -->
+    <div class="container-fluid" id="below">
+        <div class="container pt-5">
+        </div>
+    </div>
+
+
+    <!-- training certificate  -->
+    <div class="container-fluid bg-dark pt-4 pb-5 ">
+        <!-- head  -->
+        <div class="container pb-2">
+            <div class="section fw-bold">
+                <span>
+                    <img src="./sources/education.png" alt="" style="height:45px;">
+                </span>
+                Educational Qualification
+            </div>
+        </div>
+
+        <br>
+
+        <div class="d-flex align-items-center container gap-2 "   >
+            <span class="h1" style="color: #f86767;border-left: 6px solid var(--border-color1); padding-left: 60px;"> # </span> <span class="h4 text-light"> School</span>
+        </div>
+        
+        <div class="container" style="overflow-y: auto;">
+            <table
+                class="table text-center table-hover table-striped table-warning table-bordered align-middle border border-3 border-danger">
+                <tr>
+                    <th>Class</th>
+                    <th>Stream</th>
+                    <th>School</th>
+                    <th>Board</th>
+                    <th>Percentage</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td class="fw-bold">10th</td>
+                    <td>Semi-English</td>
+                    <td><a class="text-decoration-none" href="https://share.google/dpDEHub2mnPJYSDW1">Jeevan Vikas
+                            Vidyalaya, Umred 441203</a></td>
+                    <!-- <td>Jeevan Vikas Vidyalaya, Umred 441203</td> -->
+                    <td rowspan="2">Maharashtra State Board of Secondary & Higher Secondary Education</td>
+                    <td class="fw-bold">72.20%</td>
+                    <td>
+                        <span class="badge bg-success fw-normal" style="font-size: inherit;"> Passed</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">12th</td>
+                    <td>Science</td>
+                    <td><a href="https://share.google/RKDEj33oFJT6cttj2" class="text-decoration-none">Ashok Junior
+                            College, Umred 441203</a></td>
+                    <!-- <td>Ashok Junior College, Umred 441203</td> -->
+                    <!-- <td></td> -->
+                    <td class="fw-bold">83.17%</td>
+                    <td>
+                        <span class="badge bg-success fw-normal" style="font-size: inherit;"> Passed</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+
+        <div class="d-flex align-items-center container gap-2 "   >
+            <span class="h1" style="color: #f86767;border-left: 6px solid var(--border-color1); padding-left: 60px;"> # </span> <span class="h4 text-light">College [Engineering]</span>
+        </div>
+        
+
+        <div class="container" style="overflow-y: auto;">
+            <table
+                class="table text-center table-hover table-striped table-danger table-bordered align-middle border border-3 border-primary">
+                <tr>
+                    <th>Semester</th>
+                    <th>Branch</th>
+                    <th>College</th>
+                    <th>University</th>
+                    <th>SGPA</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td class="fw-bold">1st Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <!-- <td></td> -->
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">8.82</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">2nd Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <!-- <td>Priyadarshini College of Engineering, Nagpur 440019</td> -->
+                     <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">9.24</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">3rd Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <!-- <td>Priyadarshini College of Engineering, Nagpur 440019</td> -->
+                     <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">6.95</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">4th Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <!-- <td>Priyadarshini College of Engineering, Nagpur 440019</td> -->
+                     <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">7.26</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">5th Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <!-- <td>Priyadarshini College of Engineering, Nagpur 440019</td> -->
+                     <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">7.29</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">6th Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <!-- <td>Priyadarshini College of Engineering, Nagpur 440019</td> -->
+                     <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">7.32</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">7th Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <!-- <td>Priyadarshini College of Engineering, Nagpur 440019</td> -->
+                     <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">7.82</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+                <tr>
+                    <td class="fw-bold">8th Semester</td>
+                    <td>Industrial Internet of Things</td>
+                    <!-- <td>Priyadarshini College of Engineering, Nagpur 440019</td> -->
+                     <td><a href="https://pcenagpur.edu.in/"  class="text-decoration-none">Priyadarshini College of Engineering, Nagpur 440019</a></td>
+                    <td>Rashtrasant Tukadoji Maharaj Nagpur University</td>
+                    <td class="fw-bold">7.80</td>
+                    <td><span class="badge bg-success fw-normal" style="font-size: inherit;">Passed</span></td>
+                </tr>
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- footer  -->
+    <div class="tbd2 py-md-5 px-md-5 py-5 px-0 container-fluid" style="background-color: var(--white-shade);" id="df">
+        <div class="container h3">
+
+            <div class="bg-light h5 p-3 rounded-4 text-center text-dark " style="font-family:font1;">
+                <i class="fa-regular fa-copyright h1"></i>
+                <br>
+                Copyright 2025
+                <br>Made by <u class="h5 fw-bold" style="font-family:font1;">Ritesh Laxman Itankar</u>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

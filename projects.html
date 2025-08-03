@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <!-- favicon  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./vendors/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./vendors/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./vendors/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./vendors/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./vendors/favicon/android-chrome-512x512.png">
+
+    <link rel="manifest" href="./vendors/favicon/site.webmanifest">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./vendors/bootstrap-5.3.7-dist/css/bootstrap.css">
+
+    <!-- bootstrap js  -->
+    <script src="./vendors/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./vendors/fontawesome-free-7.0.0-web/css/all.css">
+    <style>
+        /* root  */
+        :root {
+            --border-color1: #8d02ff;
+            --border-color2: #f86767;
+            --font-color1: rgb(255, 0, 242);
+            --font-color2: black;
+            --btn-color-red: rgba(253, 16, 16, 0.548);
+            --bg-color1: rgba(0, 0, 0, 0.808);
+            --font-size1: 20px;
+            --font-size2: 35px;
+            --font-size3: 25px;
+            --white-shade: rgba(255, 255, 255, 0.5);
+        }
+
+        /* google fonts [downloaded]  */
+        @font-face {
+            font-family: font1;
+            src: url('./vendors/Intel_One_Mono/static/IntelOneMono-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: font2;
+            src: url('./vendors/Space_Mono/SpaceMono-Regular.ttf');
+        }
+
+        /* universal */
+        * {
+            font-family: 'font2';
+            color: var(--font-color2);
+            margin: 0;
+            padding: 0;
+            font-size: var(--font-size1);
+            /* box-sizing: content-box; */
+        }
+
+        body {
+            background-color: var(--bg-color1);
+
+        }
+
+        li:hover {
+            font-weight: 600;
+        }
+
+
+        nav .active {
+            font-weight: 600;
+        }
+
+
+        li {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            font-family: 'font2';
+        }
+
+
+        /* for desktop */
+        @media only screen and (min-width: 768px) {
+            .nav-link {
+                color: white !important;
+            }
+
+            .part1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .p1p1 {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 3;
+                justify-content: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            form {
+                width: 50%;
+            }
+
+            .p1p2 img {
+                height: 85vh;
+                /* object-fit: cover; */
+                /* height: 100%; */
+                width: auto;
+                flex-grow: 1;
+                flex-shrink: 0;
+            }
+
+            .p1p2 img {
+                outline: 2px solid var(--border-color2);
+            }
+
+            .mail {
+                display: flex;
+                justify-content: center;
+                align-self: center;
+            }
+
+            .social-circle {
+                height: 400px;
+                width: 400px;
+            }
+
+            .logoking {
+                position: relative;
+            }
+
+            .logoking::after {
+                content: '';
+                height: 300px;
+                width: 3px;
+                background-color: rgb(248, 103, 103);
+                position: absolute;
+                top: 30%;
+                /* left: 40px; */
+                /* left: 6vh; */
+                left: 50%;
+                z-index: -1;
+            }
+
+            .coru {
+                height: 70vh;
+                width: 80vw;
+                object-fit: contain;
+                background-color: #f86767;
+                border: 2px solid #8d02ff;
+                border-radius: 25px;
+
+            }
+        }
+
+
+
+        /* for mobile */
+        @media only screen and (min-width: 0px) and (max-width: 767px) {
+            .social-circle {
+                height: 250px;
+                width: 250px;
+            }
+
+            .coru {
+                height: 50vh;
+                width: 80vw;
+                object-fit: contain;
+                background-color: #f86767;
+                border: 2px solid #8d02ff;
+                border-radius: 25px;
+
+
+            }
+
+            .logo-king-child {
+                display: none;
+            }
+
+            .part1 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .p1p1 {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .mail {
+                display: flex;
+                justify-content: center;
+
+                align-self: center;
+            }
+
+            ul {
+                padding-top: 20px;
+            }
+
+            .p1p2 img {
+
+                padding: 30px;
+            }
+
+            .p1p2 img {
+                outline: 2px solid var(--border-color2);
+                outline-offset: -30px;
+            }
+
+            .tbd {
+                background: url('./sources/illu.webp');
+                filter: invert(100%);
+            }
+        }
+
+        .section {
+            border-bottom: 4px solid var(--border-color2);
+            color: white;
+            font-size: var(--font-size3);
+
+        }
+
+        .section span {
+            color: var(--border-color1);
+            font-size: var(--font-size3);
+
+        }
+
+        .social-circle {
+            border: 3px solid var(--border-color2);
+        }
+
+        .aboutext {
+            color: white;
+        }
+
+
+
+
+        @keyframes rotate1 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* @keyframes rotate2{
+            form{
+                transform: rotate(0deg);
+            }
+            to{
+                transform :rotate(-360deg);
+
+            }
+
+        } */
+
+        .rounded-circle:hover {
+            animation: rotate1 20s linear infinite;
+        }
+
+        .tbd {
+            background: url('./sources/illu.webp');
+            /* filter: invert(100%); */
+        }
+
+        /* .logos {
+            animation: rotate2 20s linear infinite;
+        } */
+        .tbd2 {
+            background: url('./sources/vecteezy_geometric.png');
+            /* filter: invert(100%); */
+
+        }
+
+        .da:hover {
+            transform: scale(2) rotateX(180deg);
+            transition: all 0.5s ease;
+        }
+
+        .card-text {
+            font-size: var(--font-size1);
+        }
+
+        body {
+            font-family: 'font2';
+        }
+
+        .f2 {
+            font-family: 'font1';
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- welcome div -->
+
+
+    <!-- navigation -->
+    <div class="container-fluid  position-sticky top-0 " style=" z-index: 100; background-color: var(--bg-color1); ">
+        <nav class="navbar navbar-expand-md">
+            <div class="navbar-brand px-0 py-0 ">
+                <i class="fa-brands  fa-web-awesome text-light h1 logoking">
+                </i>
+                <a href="https://github.com/riteshitankar">
+                    <img src="./sources/github (1).png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 100px;">
+                </a>
+                <a href="https://www.linkedin.com/in/ritesh-itankar/">
+                    <img src="./sources/linkedin.png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 200px;">
+                </a>
+                <a href="https://wa.me/+918767960965?text=Hello Ritesh,">
+                    <img src="./sources/whatsapp.png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 300px;">
+                </a>
+                <a href="./index.html"
+                    style="color: white;background-color: var(--white-shade); text-decoration: none; font-family: font1; color:var(--border-color1);"
+                    class="h4"> RITESH </a>
+
+            </div>
+
+            <button class="btn bg-light border navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu">
+                <span class="navbar-toggler-icon"></span>
+                <span style="font-family: 'font1';">Menu</span>
+            </button>
+            <div class="offcanvas offcanvas-end " id="mobilemenu">
+                <ul class="navbar-nav gap-3 text-center ms-md-auto">
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="/index.html" target="_blank" class="nav-link">Home
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-content-center align-item-center">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./education.html" target="_blank" class="nav-link">Education</a>
+                    </li>
+                    <li class="nav-item d-flex align-content-center align-item-center">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./certificates.html" target="_blank" class="nav-link ">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./projects.html" target="_blank" class="nav-link active">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./contact.html" target="_blank" class="nav-link">Contact Me</a>
+                    </li>
+                    <!-- <button class="alert btn d-xs-block d-md-none alert-danger d-flex gap-2 align-self-center"
+                            data-bs-dismiss="offcanvas" data-bs-target="#mobilemenu">
+                            <span class="btn-close"></span>
+                            <span style="font-family: 'font1';">CLOSE</span>
+                        </button> -->
+                    <button data-bs-dismiss="offcanvas" data-bs-target="mobilemenu"
+                        class="btn btn-danger d-md-none d-flex align-self-center justify-content-center gap-2 text-light"
+                        style="font-family: 'font1'; ">
+                        <span class="btn btn-close"> </span>
+                        <!-- <span class="fa-solid fa-xmark text-white"></span> -->
+                        CLOSE
+
+                    </button>
+
+
+
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <!-- part 1  -->
+    <div class="container-fluid bg-dark tbd">
+        <div class="container px-5 d-flex text-center flex-column align-items-center justify-content-center "
+            style="height: 90vh; width: 100px;">
+            <div class="py-5 h1 text-dark bg-light px-md-5 px-3 mb-5 rounded-5 d-flex align-items-center flex-row ">
+                <span style="font-size: 50px;  color: #8d02ff;">#</span>
+                <span style="font-size: var(--font-size2);">Project(s)</span>
+            </div>
+            <div>
+                <a href="#below"><img src="./sources/arrow-down-sign-to-navigate.png" class="da" alt=""
+                        height="50px"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- blank section -->
+    <div class="container-fluid" id="below">
+        <div class="container pt-5">
+        </div>
+    </div>
+
+
+    <!-- training certificate  -->
+    <div class="container-fluid bg-dark pt-4 pb-5 ">
+        <!-- head  -->
+        <div class="container pb-2">
+            <div class="section fw-bold">
+                <span>
+                    <img src="./sources/project (1).png" alt="" style="height:45px;">
+                </span>
+                Semester-Wise Projects
+            </div>
+        </div>
+
+        <div class="container d-flex justify-content-center">
+            <div id="cx" class="carousel slide position-relative" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#cx" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#cx" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#cx" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#cx" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#cx" data-bs-slide-to="4"></button>
+                </div>
+
+                <div class="carousel-inner ">
+                    <div class="carousel-item  active" data-bs-interval="300">
+                        <img src="./sources/car.jpg" class="d-block coru" alt="">
+                        <div class="carousel-caption position-absolute bottom-0" style="text-align: center; ">
+                            <p class="text-dark fw-bolder "
+                                style="background-color: var(--white-shade);font-size: var(--font-size1); ">Bluetooth
+                                controlled car</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="300">
+                        <img src="./sources/cor2.jpeg" class="d-block coru" alt="">
+                        <div class="carousel-caption position-absolute bottom-0" style="text-align: center; ">
+                            <p class="text-dark fw-bolder"
+                                style="background-color: var(--white-shade);font-size: var(--font-size1);">Plant
+                                monitoring system using sensors</p>
+                            <!-- <p class="text-dark fw-bolder" style="background-color: var(--white-shade);">Planfont-size: var(--font-size1);t monitoring system using sensors</p> -->
+
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="300">
+                        <img src="./sources/cor3.jpeg" class="d-block coru" alt="">
+                        <div class="carousel-caption position-absolute bottom-0" style="text-align: center; ">
+                            <p class="text-dark fw-bolder"
+                                style="background-color: var(--white-shade);font-size: var(--font-size1);">RFID door
+                                unlock system</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="300">
+                        <img src="./sources/cor4.png" class="d-block coru" alt="">
+                        <div class="carousel-caption position-absolute bottom-0" style="text-align: center; ">
+                            <p class="text-dark fw-bolder"
+                                style="background-color: var(--white-shade);font-size: var(--font-size1);">Messaging
+                                using andriod application</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="300">
+                        <img src="./sources/cor5.jpg" class="d-block coru" alt="">
+                        <div class="carousel-caption position-absolute bottom-0" style="text-align: center; ">
+                            <p class="text-dark fw-bolder"
+                                style="background-color: var(--white-shade);font-size: var(--font-size1);">Intelligent
+                                pet feeder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#cx" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#cx" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tbd2 py-md-5 px-md-5 py-5 px-0 container-fluid" style="background-color: var(--white-shade);" id="df">
+        <div class="container h3">
+
+            <div class="bg-light h5 p-3 rounded-4 text-center text-dark " style="font-family:font1;">
+                <i class="fa-regular fa-copyright h1"></i>
+                <br>
+                Copyright 2025
+                <br>Made by <u class="h5 fw-bold" style="font-family:font1;">Ritesh Laxman Itankar</u>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

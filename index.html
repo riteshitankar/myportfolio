@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- favicon  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./vendors/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./vendors/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./vendors/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./vendors/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./vendors/favicon/android-chrome-512x512.png">
+
+    <link rel="manifest" href="./vendors/favicon/site.webmanifest">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./vendors/bootstrap-5.3.7-dist/css/bootstrap.css">
+
+    <!-- bootstrap js  -->
+    <script src="./vendors/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./vendors/fontawesome-free-7.0.0-web/css/all.css">
+    <style>
+        /* root  */
+        :root {
+            --border-color1: #8d02ff;
+            --border-color2: rgb(248, 103, 103);
+            --font-color1: rgb(255, 0, 242);
+            --font-color2: black;
+            --btn-color-red: rgba(253, 16, 16, 0.548);
+            --bg-color1: rgba(0, 0, 0, 0.808);
+            --font-size1: 20px;
+            --font-size2: 35px;
+            --font-size3: 25px;
+            --white-shade: rgba(255, 255, 255, 0.5);
+        }
+
+        /* google fonts [downloaded]  */
+        @font-face {
+            font-family: font1;
+            src: url('./vendors/Intel_One_Mono/static/IntelOneMono-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: font2;
+            src: url('./vendors/Space_Mono/SpaceMono-Regular.ttf');
+        }
+
+        /* universal */
+        * {
+            font-family: 'font2';
+            color: var(--font-color2);
+            margin: 0;
+            padding: 0;
+            font-size: var(--font-size1);
+            /* box-sizing: content-box; */
+        }
+
+        body {
+            background-color: var(--bg-color1);
+
+        }
+
+        li:hover {
+            font-weight: 600;
+        }
+
+
+        nav .active {
+            font-weight: 600;
+        }
+
+
+        li {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body {
+            font-family: 'font2';
+        }
+
+
+        /* for desktop */
+        @media only screen and (min-width: 768px) {
+            .nav-link {
+                color: white !important;
+            }
+
+            .part1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .p1p1 {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 3;
+                justify-content: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            form {
+                width: 50%;
+            }
+
+            .p1p2 img {
+                height: 85vh;
+                /* object-fit: cover; */
+                /* height: 100%; */
+                width: auto;
+                flex-grow: 1;
+                flex-shrink: 0;
+            }
+
+            .p1p2 img {
+                outline: 2px solid var(--border-color2);
+            }
+
+            .mail {
+                display: flex;
+                justify-content: center;
+                align-self: center;
+            }
+
+            .social-circle {
+                height: 400px;
+                width: 400px;
+            }
+
+            .logoking {
+                position: relative;
+            }
+
+            .logoking::after {
+                content: '';
+                height: 300px;
+                width: 3px;
+                background-color: rgb(248, 103, 103);
+                position: absolute;
+                top: 30%;
+                /* left: 40px; */
+                /* left: 6vh; */
+                left: 50%;
+                z-index: -1;
+            }
+        }
+
+
+
+        /* for mobile */
+        @media only screen and (min-width: 0px) and (max-width: 767px) {
+            .social-circle {
+                height: 250px;
+                width: 250px;
+            }
+
+            .logo-king-child {
+                display: none;
+            }
+
+            .part1 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .p1p1 {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .mail {
+                display: flex;
+                justify-content: center;
+
+                align-self: center;
+            }
+
+            ul {
+                padding-top: 20px;
+            }
+
+            .p1p2 img {
+
+                padding: 30px;
+            }
+
+            .p1p2 img {
+                outline: 2px solid var(--border-color2);
+                outline-offset: -30px;
+            }
+        }
+
+        .section {
+            border-bottom: 4px solid var(--border-color2);
+            color: white;
+            font-size: var(--font-size3);
+
+        }
+
+        .section span {
+            color: var(--border-color1);
+            font-size: var(--font-size3);
+
+        }
+
+        .social-circle {
+            border: 3px solid var(--border-color2);
+        }
+
+        .aboutext {
+            color: white;
+        }
+
+
+
+
+        @keyframes rotate1 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* @keyframes rotate2{
+            form{
+                transform: rotate(0deg);
+            }
+            to{
+                transform :rotate(-360deg);
+
+            }
+
+        } */
+
+        .rounded-circle:hover {
+            animation: rotate1 20s linear infinite;
+        }
+
+        .tbd {
+            background: url('./sources/illu.webp');
+        }
+
+        /* .logos {
+            animation: rotate2 20s linear infinite;
+        } */
+        .tbd2 {
+            background: url('./sources/vecteezy_geometric.png');
+            /* filter: invert(100%); */
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- welcome div -->
+    <div class="container-fluid mx-0 text-center" style="font-family: 'font1'; background-color: var(--border-color2);">
+        <b>Glad</b> the internet brought you here!
+    </div>
+
+    <!-- navigation -->
+    <div class="container-fluid  position-sticky top-0 " style="z-index: 100; background-color: var(--bg-color1);">
+        <nav class="navbar navbar-expand-md">
+            <div class="navbar-brand px-0 py-0 ">
+                <i class="fa-brands  fa-web-awesome text-light h1 logoking">
+                </i>
+                <a href="https://github.com/riteshitankar">
+                    <img src="./sources/github (1).png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 100px;">
+                </a>
+                <a href="https://www.linkedin.com/in/ritesh-itankar/">
+                    <img src="./sources/linkedin.png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 200px;">
+                </a>
+                <a href="https://wa.me/+918767960965?text=Hello Ritesh,">
+                    <img src="./sources/whatsapp.png" alt="" class="logo-king-child"
+                        style="height: 50px; position: absolute; left: 0.5%; top: 300px;">
+                </a>
+                <a href="./index.html"
+                    style="color: white;background-color: var(--white-shade); text-decoration: none; font-family: font1; color:var(--border-color1);"
+                    class="h4"> RITESH </a>
+
+            </div>
+
+            <button class="btn bg-light border navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu">
+                <span class="navbar-toggler-icon"></span>
+                <span style="font-family: 'font1';">Menu</span>
+            </button>
+            <div class="offcanvas offcanvas-end " id="mobilemenu">
+                <ul class="navbar-nav gap-3 text-center ms-md-auto">
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="/index.html" target="_blank" class="nav-link active">Home
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-content-center align-item-center">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./education.html" target="_blank" class="nav-link">Education</a>
+                    </li>
+                    <li class="nav-item d-flex align-content-center align-item-center">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./certificates.html" target="_blank" class="nav-link">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./projects.html" target="_blank" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <span style="font-size: var(--font-size2); color:var(--border-color2)">#</span>
+                        <a href="./contact.html" target="_blank" class="nav-link">Contact Me</a>
+                    </li>
+                    <!-- <button class="alert btn d-xs-block d-md-none alert-danger d-flex gap-2 align-self-center"
+                            data-bs-dismiss="offcanvas" data-bs-target="#mobilemenu">
+                            <span class="btn-close"></span>
+                            <span style="font-family: 'font1';">CLOSE</span>
+                        </button> -->
+                    <button data-bs-dismiss="offcanvas" data-bs-target="mobilemenu"
+                        class="btn btn-danger d-md-none d-flex align-self-center justify-content-center gap-2 text-light"
+                        style="font-family: 'font1'; ">
+                        <span class="btn btn-close"> </span>
+                        <!-- <span class="fa-solid fa-xmark text-white"></span> -->
+                        CLOSE
+
+                    </button>
+
+
+
+                    </li>
+
+
+
+
+
+                </ul>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <!-- part1 -->
+    <!-- part1 : text -->
+    <div class="container-fluid part1">
+        <div class="p1p1 py-5 ">
+            <div class="h3 text-light">
+                Hi, I'm <span style="color: var(--border-color1);background-color: var(--white-shade);"
+                    class="h3">Ritesh Laxman Itankar</span>
+            </div>
+            <div class="h3 text-light">
+                - a <span style="color: var(--border-color1); background-color: var(--white-shade);" class="h3">Web
+                    Development Intern</span>
+            </div>
+
+            <div class="">
+                <span style="color: var(--border-color1); background-color: var(--white-shade);" class="h3 ">&</span>
+            </div>
+
+            <div class="h3 ">
+                <span style="color: var(--border-color1); background-color: var(--white-shade);" class="h3 ">Web
+                    Designer</span>.
+            </div>
+            <br>
+            <a class="btn btn-secondary  px-5 mail"
+                style="border: 2px solid var(--border-color2);color: white; border-radius: 10px;"
+                href="mailto:riteshitankar99@gmail.com?&bcc=riteshitankar76@gmail.com&subject=A mail from website&body=Hello Ritesh, ">Mail
+                @me</a>
+
+
+        </div>
+
+
+        <!-- part1: img  -->
+        <div class="p1p2">
+            <img src="./sources/myghibli.png" alt="alternate text" class="img-fluid rounded-5">
+
+        </div>
+    </div>
+
+    <!-- about section  -->
+    <div class="container-fluid bg-dark pt-3">
+        <div class="container">
+            <div class="section fw-bold">
+                <span>
+                    <img src="./sources/about.png" alt="" style="height:45px;"></span> About Me
+            </div>
+        </div>
+    </div>
+    <!-- about me details -->
+    <div class="container-fluid bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <p class="text-white" style="text-align: justify; font-family: 'font1';">
+                    My name is Ritesh, and I’m currently working as a Web Development Intern in Nagpur. During my
+                    college
+                    years, I actively contributed to both technical and editorial activities within my department. I
+                    served
+                    as the Content and Editorial Committee Head as well as a Technical Member, where I was responsible
+                    for
+                    designing the departmental magazine and managing the technical infrastructure during events.
+                </p>
+
+                <p class="text-white" style="text-align: justify; font-family: 'font1';">
+                    I hold a B.Tech. in Industrial Internet of Things, and I'm deeply passionate about integrating
+                    technology into practical solutions. One of my key academic projects was a Python-based automated
+                    pet
+                    feeder, which combined software and hardware elements to solve a real-world problem.
+                </p>
+
+
+
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-3 text-light col-6 fw-bold">Name</div>
+                <div class="col-md-1 text-light col-1">:</div>
+                <div class="col-md-8 text-light col-12">Ritesh Laxman Itankar</div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-3 col-6 text-light fw-bold">Email ID</div>
+                <div class="col-md-1 col-1 text-light">:</div>
+                <div class="col-md-8 col-12 text-light">
+                    <a href="mailto:riteshitankar99@gmail.com" class="text-white text-decoration-none">
+                        riteshitankar99@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class=" fw-bold text-light col-md-3 col-6 ">Phone Number</div>
+                <div class="col-md-1 text-light col-1">:</div>
+                <div class="col-md-8 text-light col-12">
+                    <a href="tel:+918767960965" class="text-white text-decoration-none">
+                        8767960965
+                    </a>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class=" fw-bold col-6 text-light  col-md-3">Location</div>
+                <div class="col-md-1 col-1 text-light">:</div>
+                <div class="col-md-8 col-12 text-light">Nagpur, Maharashtra, India</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- technology section  -->
+    <div class="container-fluid  text-dark bg-light pt-3">
+        <div class="container">
+            <div class="section text-dark fw-bold">
+                <span>
+                    <img src="./sources/data-management.png" alt="" style="height:50px;"></span> Technologies known
+            </div>
+        </div>
+    </div>
+    <!-- technology details -->
+    <div class="container-fluid py-4 text-dark bg-light tbd">
+        <div class="container bg-light ">
+            <div class="row mx-3">
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/html.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">html</div>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/css.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">css</div>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/bootstrap.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">bootstrap</div>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/github.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">github</div>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/react.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">reactjs</div>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/javascript.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">javascript</div>
+                </div>
+                <!-- note : little different styling than other image  -->
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-end justify-content-center bg-light">
+                    <img src="./sources/expressjs.webp" alt="" class="" width="100%">
+                    <div class="h4 text-center ">expressjs</div>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/mongo.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">mongodb</div>
+                </div>
+                <div
+                    class="col-lg-3 col-md-4 col-sm-6   d-flex flex-column align-self-center justify-content-center bg-light">
+                    <img src="./sources/node.png" alt="" class="px-5 pt-5" width="100%">
+                    <div class="h4 text-center ">nodejs</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- social links -->
+
+    <div class="container-fluid pt-3" style="background-color: #DED4E8;">
+        <div class="container">
+            <div class="section text-dark fw-bold">
+                <span>
+                    <img src="./sources/link.png" alt="" style="height:45px;"></span> My Social Links
+            </div>
+        </div>
+    </div>
+
+    <!-- social link details  -->
+
+    <div class="container-fluid " style="background: linear-gradient(45deg, #DED4E8 50%, #C7395F 50%);">
+        <div class="container d-flex align-items-center flex-column">
+            <div class=" py-5">
+                <div class="rounded-circle social-circle position-relative" style="z-index: 1;">
+                    <!-- for top  -->
+                    <a href="https://www.linkedin.com/in/ritesh-itankar/"
+                        class="rounded-3 position-absolute fa-brands fa-square-linkedin fa-3x border-light border border-3 logos text-primary"
+                        style="top: -40px; left: 50%; transform: translateX(-50%);background-color: var(--white-shade);text-decoration: none;"></a>
+                    <!-- for bottom -->
+                    <a href="https://github.com/riteshitankar"
+                        class=" rounded-3 position-absolute fa-brands fa-square-github fa-3x border-light border border-3 logos text-dark"
+                        style="bottom: -40px; left:50%; transform:translateX(-50%); background-color: var(--white-shade);text-decoration: none;"></a>
+                    <!-- for right  -->
+                    <a href="https://www.facebook.com/ritesh.laxmanitankar/"
+                        class=" rounded-3 position-absolute fa-brands fa-square-facebook fa-3x border-light border border-3 logos"
+                        style="right: -40px; top: 50%; transform: translateY(-50%);background-color: var(--white-shade);text-decoration: none;"></a>
+                    <!-- for left  -->
+                    <a href="https://www.instagram.com/riteshitankar/profilecard/?igsh=bWw4NHFudmc4ZXh1"
+                        class=" rounded-3 position-absolute fa-brands fa-square-instagram fa-3x border-light border border-3 logos"
+                        style="left: -40px; top: 50%; transform: translateY(-50%);background-color: var(--white-shade);text-decoration: none; color: rgb(253, 13, 161);"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container-fluid pt-3 " style="background-color: #E8BA40;">
+
+        <div class="container">
+            <div class="section fw-bold">
+                <span>
+                    <img src="./sources/contact-form.png" alt="" style="height:45px;"></span> Get in touch
+            </div>
+        </div>
+    </div>
+    <!-- link body part2-->
+    <div class="container-fluid part2  py-4 "
+        style="font-size: var(--font-size1); font-family: font1; background-color: #E8BA40;">
+        <form class="container d-flex flex-column gap-2">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4">
+                    <label for="fn" style="background-color: var(--white-shade);"
+                        class="px-3 py-1 label-form my-1">First Name : </label>
+                </div>
+                <div class="col-12 col-md-7">
+                    <input type="text" id="fn" class="form-control" placeholder="First Name" required>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4">
+                    <label for="ln" style="background-color: var(--white-shade);" class="px-3 py-1 label-form my-1">Last
+                        Name : </label>
+                </div>
+                <div class="col-12 col-md-7">
+                    <input type="text" id="ln" class="form-control" placeholder="Surname" required>
+                </div>
+
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4">
+                    <label for="phn" style="background-color: var(--white-shade);"
+                        class="px-3 py-1 label-form my-1">Phone Number : </label>
+                </div>
+                <div class="col-12 col-md-7">
+                    <input type="number" id="phn" class="form-control" placeholder="Mobile Number" reqired>
+                </div>
+
+
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4">
+                    <label for="wno" style="background-color: var(--white-shade);"
+                        class="px-3 py-1 label-form my-1">WhatsApp Number : </label>
+                </div>
+                <div class="col-12 col-md-7">
+                    <input type="number" id="wno" class="form-control" placeholder="Mobile Number">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4">
+                    <label for="message" style="background-color: var(--white-shade);"
+                        class="px-3 py-1 label-form my-1">Messsage For @Me : </label>
+                </div>
+                <div class="col-12 col-md-7">
+                    <textarea name="" class="form-control" style="width: 100%; height: 100px;" id="message"
+                        placeholder="Start typing from here..."></textarea>
+                </div>
+
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4">
+                    <label for="rp" style="background-color: var(--white-shade);"
+                        class="label-form px-3 py-1 my-1 ">Reference Person : </label>
+                </div>
+                <div class="col-12 col-md-7">
+                    <input type="text" id="rp" class="form-control" placeholder="Reference Person Name">
+                </div>
+            </div>
+            <div class="d-flex gap-5 justify-content-center">
+                <button class="btn btn-danger border border-1" type="reset">Reset</button>
+                <button class="btn btn-success border border-1" type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+    <div class="tbd2 py-md-5 px-md-5 py-5 px-0 container-fluid" style="background-color: var(--white-shade);">
+        <div class="container h3">
+
+            <div class="bg-light h5 p-3 rounded-4 text-center text-dark " style="font-family:font1;">
+                <i class="fa-regular fa-copyright h1"></i>
+                <br>
+                Copyright 2025
+                <br>Made by <u class="h5 fw-bold" style="font-family:font1;">Ritesh Laxman Itankar</u>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
